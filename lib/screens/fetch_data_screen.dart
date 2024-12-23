@@ -30,15 +30,7 @@ Widget build(BuildContext context) {
         } else if (state is FetchUserLoadingState) {
           return const Center(child: CircularProgressIndicator());
         } else if (state is FetchUserLoadedState) {
-          return ListView.builder(
-            itemCount: state.userData.length,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text(state.userData[index].body.toString()),
-                leading: Text(state.userData[index].userId.toString()),
-              );
-            },
-          );
+         
         } else if (state is fetchUserErrorState) {
           return const Center(
             child: Text(
